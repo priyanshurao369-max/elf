@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_blank" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "surface-container": "#ffe9ea",
+                    "primary-container": "#702632",
+                    "surface-dim": "#ffced2",
+                    "on-tertiary-container": "#4e3d00",
+                    "primary-fixed-dim": "#ffb2b9",
+                    "inverse-surface": "#512128",
+                    "outline-variant": "#d9c1c2",
+                    "primary": "#530f1d",
+                    "tertiary": "#735c00",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary-fixed-variant": "#792d39",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "error-container": "#ffdad6",
+                    "on-background": "#370c14",
+                    "inverse-primary": "#ffb2b9",
+                    "surface-tint": "#97444f",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#cca730",
+                    "on-secondary-container": "#fffbff",
+                    "surface": "#fff8f7",
+                    "secondary": "#ba0035",
+                    "surface-container-highest": "#ffd9dc",
+                    "background": "#fff8f7",
+                    "on-secondary-fixed-variant": "#920028",
+                    "on-primary-container": "#f38e99",
+                    "primary-fixed": "#ffdadc",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#3f0110",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb3b6",
+                    "surface-bright": "#fff8f7",
+                    "outline": "#877273",
+                    "on-surface-variant": "#544244",
+                    "surface-variant": "#ffd9dc",
+                    "secondary-container": "#e21e49",
+                    "surface-container-low": "#fff0f0",
+                    "inverse-on-surface": "#ffeced",
+                    "on-secondary-fixed": "#40000c",
+                    "surface-container-high": "#ffe1e3",
+                    "on-surface": "#370c14",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-fixed": "#ffdada",
+                    "on-tertiary-fixed": "#241a00"
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                spacing: {
+                    "space-xs": "0.25rem",
+                    "space-xl": "2.25rem",
+                    "space-lg": "1.5rem",
+                    "space-sm": "0.5rem",
+                    "margin": "1.25rem",
+                    "gutter": "1rem",
+                    "space-md": "1rem"
+                },
+                fontFamily: {
+                    "title-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-hero": ["Playfair Display"],
+                    "display-hero-mobile": ["Playfair Display"]
+                },
+                fontSize: {
+                    "title-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                    "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "500" }],
+                    "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+                    "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+                    "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                    "display-hero": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                    "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #fdfbf9;
+    }
+  </style>
+</head>
+<body class="bg-[#fdfbf9] font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary/15 selection:text-primary relative overflow-x-hidden">
+<!-- Subtle warm ambient lighting -->
+<div class="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-[#fff7f5] via-[#fdfbf9] to-[#faf4f2] opacity-80"></div>
+<main class="flex-1 flex flex-col relative w-full z-10 pt-safe pb-8 px-6 max-w-md mx-auto justify-between"><div class="flex flex-col w-full space-y-8">
+<!-- Top Chapter Header -->
+<header class="flex flex-col items-center text-center space-y-3 pt-2">
+<!-- Chapter Pagination Meta -->
+<div class="flex items-center justify-between w-full text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest px-1">
+<span>Chapter III</span>
+<div aria-label="Step 3 of 4" class="flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-2 h-2 rounded-full bg-primary ring-2 ring-primary/20"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+</div>
+<span>03 / 04</span>
+</div>
+<!-- Star & Eyebrow -->
+<div class="flex items-center justify-center space-x-2 pt-2">
+<svg class="w-3.5 h-3.5 text-tertiary-container" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path>
+</svg>
+<span class="text-label-md font-label-md text-primary tracking-widest uppercase">A Bouquet of Wishes</span>
+<svg class="w-3.5 h-3.5 text-tertiary-container" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path>
+</svg>
+</div>
+<!-- Title & Subtitle -->
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile italic text-primary pt-1">
+      Flowers for Bhoomi
+    </h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xs leading-relaxed">
+      Five handpicked blooms, each carrying a heartfelt tribute to who you are.
+    </p>
+</header>
+<!-- Editorial Card Anthology -->
+<section class="bg-surface-container-low/80 backdrop-blur-md rounded-xl p-5 sm:p-6 shadow-sm flex flex-col space-y-7">
+<!-- Bloom 1: Pink Peonies -->
+<article class="flex flex-col space-y-3.5 group">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial close-up of lush pastel pink blooming peonies bathed in soft diffused morning golden light, artistic botanical composition with warm creamy champagne tones, delicate petals with dew drops, quiet luxury aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaMO0-jluGAmiEAG18oK9tE5ndzzdYwTwHTFISD2nCFAPxGoE_t_KD89Z84MDsho_Qo2wNaQL-WtPHEolmWjaWSb5azWZ4WIemd4WvgykveJoKzpcWxE2xdX323eofcIJMvVw_RfijxJYVLMBEz2xlBR7VvIYzp-9xGPlIYWdCDPprZaDcBaChJZ-nZDGsJHyb74lItCMIO-x1astnLL7Be-HmTGk6szZZ2iB-CEkanhG5WzSX7IOK"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary tracking-wider uppercase">
+          Bloom No. 01
+        </div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center space-x-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_florist</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Blushing Peonies Bouquet</span>
+</div>
+<h2 class="text-title-sm font-title-sm text-primary font-headline-md">
+          Peonies <span class="text-on-surface-variant font-normal font-body-md">• Grace &amp; Unstoppable Radiance</span>
+</h2>
+<p class="text-body-md font-body-md text-on-surface-variant italic leading-relaxed">
+          For the effortless warmth and poise you carry into every room you step into. Your vibrant presence lights up every moment with unforced grace.
+        </p>
+</div>
+</article>
+<!-- Hairline Separator -->
+<div class="flex items-center justify-center space-x-3 text-outline-variant/60 py-1">
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+<span class="text-[10px] tracking-widest text-primary/40">✦</span>
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+</div>
+<!-- Bloom 2: White Orchids -->
+<article class="flex flex-col space-y-3.5 group">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist elegant high-end still life of pristine white cascading orchids against a warm ivory background, gentle architectural shadows, ethereal botanical styling, deep burgundy accents in vase reflections, editorial luxury photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgcSpaI09tAj8pF0lIJT4G-zxOSwV0W6hCJKzmcuaEididXofp8CE1-GJSP-uTgsdnMHWcybRNqxpLjfdrQwifOVePqmGyhdI2rHA-2-VRsja6NZlQOZSxKAMMDiYrwM3fi6AFuW5lzNK3H3MPfV-TsMdFMi0jh5qTZNxbwOCmU90BUQ41pEtGHu2eoqkEIFO87P59CydFxXFvq8lN4ORUIe7dydLeov9qkeok0zJ-FesMtTwIU5B1"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary tracking-wider uppercase">
+          Bloom No. 02
+        </div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center space-x-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Moonlit Orchids Bouquet</span>
+</div>
+<h2 class="text-title-sm font-title-sm text-primary font-headline-md">
+          White Orchids <span class="text-on-surface-variant font-normal font-body-md">• Pure Elegance &amp; Depth</span>
+</h2>
+<p class="text-body-md font-body-md text-on-surface-variant italic leading-relaxed">
+          A celebration of your quiet strength, refined taste, and the thoughtful brilliance that makes you so uniquely rare.
+        </p>
+</div>
+</article>
+<!-- Hairline Separator -->
+<div class="flex items-center justify-center space-x-3 text-outline-variant/60 py-1">
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+<span class="text-[10px] tracking-widest text-primary/40">✦</span>
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+</div>
+<!-- Bloom 3: Red Garden Roses -->
+<article class="flex flex-col space-y-3.5 group">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Rich velvety dark red and wine crimson garden roses in an artisanal rustic ceramic pitcher, intimate romantic lighting, moody soft focus aesthetic, couture floral arrangement with deep tones and warm dusty rose undertones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Q5HQjSwfWjEKIKJoesMjm3yKgkahovE_wgSqId62V5IO1E4xtGReEvw8yQ9Yz0RBGcGy4uuT1HU2grjrqgGInHDaMG5hzR-TZlbkAZrk3s8bLxEnP7wxZXUO0T8AvYZhuGxcganQXDoIucEZiIwFGKCvyCpMacioHL1QiYIMqi8AFlmYG37M2Qss-jI_TNhzsrzVzpZmlx5BIQK-vktZnp254TkaZ504FSeX8LiUPMV2JnQshCR6"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary tracking-wider uppercase">
+          Bloom No. 03
+        </div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center space-x-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Velvet Garden Roses Bouquet</span>
+</div>
+<h2 class="text-title-sm font-title-sm text-primary font-headline-md">
+          Garden Roses <span class="text-on-surface-variant font-normal font-body-md">• Fearless Passion &amp; Heart</span>
+</h2>
+<p class="text-body-md font-body-md text-on-surface-variant italic leading-relaxed">
+          For that fierce, magnetic energy and unwavering loyalty you give to those you love. Bold, inspiring, and completely unforgettable.
+        </p>
+</div>
+</article>
+<!-- Hairline Separator -->
+<div class="flex items-center justify-center space-x-3 text-outline-variant/60 py-1">
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+<span class="text-[10px] tracking-widest text-primary/40">✦</span>
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+</div>
+<!-- Bloom 4: Sunflowers & Marigolds -->
+<article class="flex flex-col space-y-3.5 group">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Warm luminous arrangement of golden miniature sunflowers and rich amber marigolds wrapped in artisanal parchment, illuminated by late afternoon sun flares, cheerful celebratory aesthetic with warm honey hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxIN5DlcZpVvaSN00f2VfThfBoscZrJ58ESSF51gXF1mery9x3YokTSvgnOVTUlAGSYfuMUWFK96EKSVpjLJaENhbbDUZXdCwiyadsS3VqZf5f1EvJLuI1SVF4oewUfpbOuZ05zX2evDiT0uEjZK1CCVoQpsSMLdDt3iA1lQdjKe_KdRhcKD5KIHmTDx0PghETwLZwBCy5NgaL2PB5FmaDiR80gwSgT1Br0-lYaRIwin8ZM0582mys"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary tracking-wider uppercase">
+          Bloom No. 04
+        </div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center space-x-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Golden Sunflowers Bouquet</span>
+</div>
+<h2 class="text-title-sm font-title-sm text-primary font-headline-md">
+          Sunflowers <span class="text-on-surface-variant font-normal font-body-md">• Joy &amp; Contagious Laughter</span>
+</h2>
+<p class="text-body-md font-body-md text-on-surface-variant italic leading-relaxed">
+          Honoring the infectious cheer, unfiltered giggles, and spontaneous sparkle you effortlessly gift everyone around you.
+        </p>
+</div>
+</article>
+<!-- Hairline Separator -->
+<div class="flex items-center justify-center space-x-3 text-outline-variant/60 py-1">
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+<span class="text-[10px] tracking-widest text-primary/40">✦</span>
+<span class="h-px bg-outline-variant/40 flex-1"></span>
+</div>
+<!-- Bloom 5: Lilies of the Valley & Baby's Breath -->
+<article class="flex flex-col space-y-3.5 group">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Delicate fine art botanical macro photography of fragile lilies of the valley and airy white baby breath florets, minimal tender aesthetic, soft ivory silk backdrop, muted soft champagne green tones, gentle poetic serenity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo8hQNJa4sGCc6saJOTZUbzp_zi2LlmOX42ml-KzLpXErr_WRaC9xXP-SvKrx8GcFHGUjmxycVD7mIsFbnMv1MN1-2URXxICRAJv74NDtvBRGcGOEPTfkHwI_fXSKV5RzCoT0dtrPPt4isBD-zRFDONje-IlSsP8f06oLPwGvvzlTyKAuQdQMaYNk5mCVBbUTPAe2AH-9QkC6ls7tdElsUEo-4Ji3EayakOwxDoxVaCydImGMWoswG"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary tracking-wider uppercase">
+          Bloom No. 05
+        </div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center space-x-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">nature</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Delicate Lilies Bouquet</span>
+</div>
+<h2 class="text-title-sm font-title-sm text-primary font-headline-md">
+          Lilies of the Valley <span class="text-on-surface-variant font-normal font-body-md">• Sweet Serenity &amp; Wonder</span>
+</h2>
+<p class="text-body-md font-body-md text-on-surface-variant italic leading-relaxed">
+          Wishing you a new decade filled with gentle adventures, serene mornings, and dreams as vast and boundless as the sky.
+        </p>
+</div>
+</article>
+</section>
+<!-- Interactive Bouquet Petal Shower Trigger -->
+<section class="flex flex-col items-center text-center px-2">
+<button class="inline-flex items-center space-x-2 text-label-sm font-label-sm text-primary tracking-wider uppercase bg-surface-container hover:bg-surface-container-high active:scale-95 transition-all px-4 py-2 rounded-full cursor-pointer" id="send-petals-btn">
+<span class="material-symbols-outlined text-[16px] text-secondary">filter_vintage</span>
+<span>Press to Scatter Petals</span>
+</button>
+<div class="opacity-0 transition-opacity duration-300 text-label-sm font-label-sm text-secondary pt-2" id="petal-toast">
+      ❀ Showering Bhoomi in blooms &amp; love...
+    </div>
+</section>
+<!-- Navigation Action Footer -->
+<footer class="flex flex-col items-center space-y-5 pt-1 pb-4">
+<div class="grid grid-cols-2 gap-3 w-full">
+<!-- Back Button -->
+<a class="flex items-center justify-center space-x-1.5 py-3.5 px-4 rounded-full bg-surface-container text-primary hover:bg-surface-container-high active:scale-98 transition-all text-title-sm font-title-sm" href="#" onclick="if(window.history.length &gt; 1){window.history.back();}return false;">
+<span class="material-symbols-outlined text-[18px]">west</span>
+<span>Back</span>
+</a>
+<!-- Next Button -->
+<a class="flex items-center justify-center space-x-1.5 py-3.5 px-4 rounded-full bg-primary text-on-primary shadow-sm hover:opacity-95 active:scale-98 transition-all text-title-sm font-title-sm uppercase tracking-wider" href="#">
+<span>Final Chapter</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+<!-- Editorial Bottom Footnote -->
+<div class="flex items-center justify-center space-x-2 text-label-sm font-label-sm text-on-surface-variant tracking-widest uppercase opacity-80 pt-2">
+<span class="text-tertiary-container">✦</span>
+<span>A Tribute to 20 Wonderful Years</span>
+<span class="text-tertiary-container">✦</span>
+</div>
+</footer>
+</div>
+<script>
+        (function () {
+            const btn = document.getElementById('send-petals-btn');
+            const toast = document.getElementById('petal-toast');
+            if (btn && toast) {
+                btn.addEventListener('click', function () {
+                    toast.classList.remove('opacity-0');
+                    toast.classList.add('opacity-100');
+                    setTimeout(function () {
+                        toast.classList.remove('opacity-100');
+                        toast.classList.add('opacity-0');
+                    }, 2200);
+                });
+            }
+        })();
+</script></main>
+<script>
+    (function () {
+        const backBtn = document.getElementById('nav-back-btn');
+        if (backBtn) {
+            backBtn.addEventListener('click', function () {
+                if (window.history.length > 1) {
+                    window.history.back();
+                }
+            });
+        }
+
+        const celebrateBtn = document.getElementById('nav-celebrate-btn');
+        if (celebrateBtn) {
+            celebrateBtn.addEventListener('click', function () {
+                celebrateBtn.classList.add('opacity-90');
+                setTimeout(() => celebrateBtn.classList.remove('opacity-90'), 180);
+            });
+        }
+    })();
+</script>
+</body></html>
